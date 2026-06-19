@@ -5,15 +5,173 @@
 		<title>Game</title>
 		
 		<link rel = "stylesheet" type = "text/css" href = "styles.css">
+		<script src = "code.js"></script>
+		
 		
 	</head>
 
 	<body>	
+
+		
 		
 		<div class = "grid-container">
 
-			<div class = "box" style = "grid-area: box-1" id = "box-1">
+			<div class = "box" style = "grid-area: box-1" id = "p1StatsWindowContainer">
 
+				<div class = "stat-container" id = "p1CharName">
+					
+					<table>
+
+						<tr>
+							<td><img id = "p1Icon" class = "charIcon" height = "70" width = "70"></td>						
+							<td id = "p1Name"></td>
+						</tr>
+
+					</table>
+					
+				</div>
+
+				<div class="stat-container" id="p1CharStats">
+
+					
+					
+					<div class="stat-label">
+						HP						
+					</div>
+
+					<progress id = "p1HP" max = "10"></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						MP						
+					</div>
+
+					<progress id = "p1MP" max="10"></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Physical Attack						
+					</div>
+
+					<progress id = "p1PA" max="10"></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Magic Attack						
+					</div>
+
+					<progress id="p1MA" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Physical Defense						
+					</div>
+
+					<progress id = "p1PD" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Magic Defense						
+					</div>
+
+					<progress id = "p1MD"  max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Fortune						
+					</div>
+
+					<progress id = "p1Fortune" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+
+
+				</div>
+				
 			</div>
 
 			<div class = "box" style = "grid-area: box-2;">
@@ -32,13 +190,169 @@
 
 			</div>
 
-			<div class = "box" style = "grid-area: box-6" id = "box-6">
+			<div class = "box" style = "grid-area: box-6" id = "p2StatsWindowContainer">
+
+				<div class = "stat-container">
+					
+					
+					<table>
+						
+						<tr>
+							<td><img height="70" width="70" class = "charIcon" id = "p2Icon"></td>						
+							<td id = "p2Name"></td>
+						</tr>
+
+					</table>
+					
+				</div>
+
+				<div class="stat-container">
+
+					
+					
+					<div class="stat-label">
+						HP						
+					</div>
+
+					<progress id = "p2HP" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						MP						
+					</div>
+
+					<progress id = "p2MP" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Physical Attack						
+					</div>
+
+					<progress id = "p2PA" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Magic Attack						
+					</div>
+
+					<progress id = "p2MA" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Physical Defense						
+					</div>
+
+					<progress id = "p2PD" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Magic Defense						
+					</div>
+
+					<progress id = "p2MD" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+					<div class="stat-label">
+						Fortune						
+					</div>
+
+					<progress id = "p2Fortune" max="10" ></progress>
+
+					<div class="stat-numbers">
+       					<span>1</span>
+        				<span>2</span>
+        				<span>3</span>
+        				<span>4</span>
+        				<span>5</span>
+						<span>6</span>
+						<span>7</span>
+						<span>8</span>
+						<span>9</span>
+						<span>10</span>
+    				</div>
+
+
+
+				</div>
 
 			</div>
 
 			<div class = "box" style = "grid-area: box-7;">
 
 			</div>
+
 			<div class = "box" style = "grid-area: box-8;">
 
 			</div>
@@ -83,64 +397,79 @@
 
 			</div>
 
-			<div class = "box" style = "grid-area: box-19" id = "box-19">
+			<div  style = "grid-area: box-19" class = "box" id = "p1AbPointsWindow">
+
+					<div id = "p1AbPointsMessage">
+						
+					</div>
+					<div id = "p1AbPointNumber">
+						
+					</div>
 
 			</div>
 
 			<div class = "box" style = "grid-area: box-20;">
 				<div class = "ability-grid">
 
-					<div class = "ability">
-						<h3>Haymaker</h3>						
+					<div>
+						<button type = "button" id = "p1Ability1">	</button>				
 					</div>
 
-					<div class = "ability">
-						<h3>Fire Axe</h3>						
+					<div>
+						<button type = "button" id = "p1Ability2">	</button>				
 					</div>
 
-					<div class = "ability">
-						<h3>Regenerate</h3>						
+					<div>
+						<button type = "button" id = "p1Ability3">	</button>									
 					</div>
 
-					<div class = "ability">
-						<h3>Defend</h3>						
+					<div>
+						<button type = "button" id = "p1Ability4">	</button>						
 					</div>
 
 				</div>
 
 			</div>
 
-			<div class = "box" style = "grid-area: box-21" id = "box-21">
-				<p>Ogre delivers the Haymaker for 2 damage!</p>
+			<div class = "box" style = "grid-area: box-21" id = "messageBox">
+				
 			</div>
 
 			<div class = "box" style = "grid-area: box-22" id = "box-22">
 
 				<div class = "ability-grid">
 
-					<div class = "ability">
-						<h3>Beak Beat</h3>						
+					<div>
+						<button type = "button" id = "p2Ability1">	</button>				
 					</div>
 
-					<div class = "ability">
-						<h3>Vampiric Drain</h3>						
+					<div>
+						<button type = "button" id = "p2Ability2">	</button>				
 					</div>
 
-					<div class = "ability">
-						<h3>Forlorn Fate</h3>						
+					<div>
+						<button type = "button" id = "p2Ability3">	</button>									
 					</div>
 
-					<div class = "ability">
-						<h3>Defend</h3>						
+					<div>
+						<button type = "button" id = "p2Ability4">	</button>						
 					</div>
 
 				</div>
 
 			</div>
 
-			<div class = "box ability-container" style = "grid-area: box-23" id = "box-23">
+			<div  style = "grid-area: box-23" class = "box" id = "p2AbPointsWindow">
 
+									
+					<div id = "p2AbPointsMessage">
+						
+					</div>
+					<div id = "p2AbPointNumber">
+						
+					</div>	
 				
+
 			</div>
 
 			

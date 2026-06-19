@@ -1,0 +1,467 @@
+class Character 
+{
+    constructor(name, hp, mp, pa, ma, pd, md, fortune, ability1, ability2, ability3, ability4, icon, avatar) 
+    {
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+        this.pa = pa;
+        this.ma = ma;
+        this.pd = pd;
+        this.md = md;
+        this.fortune = fortune;
+        this.ability1 = ability1;
+        this.ability2 = ability2;
+        this.ability3 = ability3;
+        this.ability4 = ability4;
+        this.icon = icon;
+        this.avatar = avatar;
+        let paModifier = 0;
+        let maModifier = 0;
+        let pdModifier = 0;
+        let mdModifier = 0;
+        let fortuneModifier = 0;
+
+        
+        //Set physical attack ability modifiers
+        if(this.pa > 5 && this.pa < 8)
+        {
+            this.paModifier = 1;
+        }
+        else if(this.pa > 7 && this.pa < 10)
+        {
+            paModifier = 2;
+        }
+        else if(this.pa < 6)
+        {
+            this.paModifier = 0;
+        }
+        else
+        {
+            this.paModifier = 3;
+        }
+
+        //set magic attack ability modifiers
+        if(this.ma > 5 && this.ma < 8)
+        {
+            this.maModifier = 1;
+        }
+        else if(this.ma > 7 && this.ma < 10)
+        {
+            maModifier = 2;
+        }
+        else if(this.ma < 6)
+        {
+            this.maModifier = 0;
+        }
+        else
+        {
+            this.maModifier = 3;
+        }
+
+        //set physical defense ability modifiers
+        if(this.pd > 5 && this.pd < 8)
+        {
+            this.pdModifier = 1;
+        }
+        else if(this.pd > 7 && this.pd < 10)
+        {
+            this.pdModifier = 2;
+        }
+        else if(this.pd < 6)
+        {
+            this.pdModifier = 0;
+        }
+        else
+        {
+            pdModifier = 3;
+        }
+
+        //set magic defense ability modifiers
+        if(this.md > 5 && this.md < 8)
+        {
+            this.mdModifier = 1;
+        }
+        else if(this.md > 7 && this.md < 10)
+        {
+            this.mdModifier = 2;
+        }
+        else if(this.md < 6)
+        {
+            mdModifier = 0;
+        }
+        else
+        {
+            this.mdModifier = 3;
+        }
+        
+        
+        //set fortune ability modifiers
+        if(this.fortune > 5 && this.fortune < 8)
+        {
+            this.fortuneModifier = 1;
+        }
+        else if(this.fortune > 7 && this.fortune < 10)
+        {
+            this.fortuneModifier = 2;
+        }
+        else if(this.fortune < 6)
+        {
+            this.fortuneModifier = 0;
+        }
+        else
+        {
+            this.fortuneModifier = 3;
+        }
+        
+       
+
+        
+        
+    }
+
+    setName(name) 
+    {
+        this.name = name;
+    }
+
+    setHP(hp) 
+    {
+        this.hp = hp;
+    }
+
+    setMP(mp) 
+    {
+        this.mp = mp;
+    }
+
+    setPA(pa) 
+    {
+        this.pa = pa;
+    }
+
+    setMA(ma) 
+    {
+        this.ma = ma;
+    }
+
+    setPD(pd) 
+    {
+        this.pd = pd;
+    }
+
+    setMD(md) 
+    {
+        this.md = md;
+    }
+
+    setFortune(fortune) 
+    {
+        this.fortune = fortune;
+    }   
+
+    setAbility1(ability1) 
+    {
+        this.ability1 = ability1;
+    }
+
+    setAbility2(ability2) 
+    {
+        this.ability2 = ability2;
+    }
+
+    setAbility3(ability3) 
+    {
+        this.ability3 = ability3;
+    }
+
+    setAbility4(ability4) 
+    {
+        this.ability4 = ability4;
+    }
+
+    setIcon(icon) 
+    {
+        this.icon = icon;
+    }
+
+    setAvatar(avatar) 
+    {
+        this.avatar = avatar;
+    }
+
+    getName()
+    {
+        return this.name;
+    }
+
+    getHP()
+    {
+        return this.hp;
+    }
+
+    getMP()
+    {
+        return this.mp;
+    }
+
+    getPA()
+    {
+        return this.pa;
+    }
+
+    getMA()
+    {
+        return this.ma;
+    }
+
+    getPD()
+    {
+        return this.pd;
+    }
+
+    getMD()
+    {
+        return this.md;
+    }
+
+    getFortune()
+    {
+        return this.fortune;
+    }
+
+    getAbility1()
+    {
+        return this.ability1;
+    }
+
+    getAbility2()
+    {
+        return this.ability2;
+    }
+
+    getAbility3()
+    {
+        return this.ability3;
+    }
+
+    getAbility4()
+    {
+        return this.ability4;
+    }
+
+    getIcon()
+    {
+        return this.icon;
+    }
+
+    getAvatar()
+    {
+        return this.avatar;
+    }
+    /*
+    getpaModifier()
+    {
+        return this.paModifier;
+    }
+
+    getmaModifier()
+    {
+        return this.maModifier;
+    }
+
+    getpdModifier()
+    {
+        return this.pdModifier;
+    }
+
+    getmdModifier()
+    {
+        return this.mdModifier;
+    }
+    */
+    getfortuneModifier()
+    {
+        return this.fortuneModifier;
+    }
+};
+
+const Ogre = new Character("Ogre", 10, 5, 8, 3, 6, 3, 5, "Haymaker", "Fire Axe", "Roar", "Defend", "ogreHead.png", "ogreFinal.png");
+const Bird = new Character("Bird", 7, 7, 4, 6, 3, 5, 8, "Beak Bite", "Drain", "Fate", "Defend", "birdHead.png", "birdFinal.png");
+
+P1 = Ogre;
+P2 = Bird;
+
+
+
+let message = "Let the battle begin! Fate shall decide who goes first each turn. " +
+                " <br /><br />The dice roll is result, Player result the result goes first. ";
+
+let dice = 0;
+
+let p1status = "";
+let p2status = "";
+
+let round = 0;
+
+let playerTurn = 0;
+
+let goFirst = 0;
+
+let playerCharacter = 1;
+
+let p1AbPointsMessage = "";
+let p2AbPointsMessage = "";
+
+let p1AbPoints = 0;
+let p2AbPoints = 0;
+
+window.onload = function() {
+    startGame();
+};
+
+function startGame() 
+{
+    
+    loadCharacters();
+    gameLoop();   
+
+
+}
+
+function loadCharacters() 
+{
+    // Load Player 1 character data
+    document.getElementById("char1").style.backgroundImage = "url(" + P1.getAvatar() + ")";
+    document.getElementById("p1Icon").setAttribute("src", P1.getIcon());
+    document.getElementById("p1Name").innerHTML = P1.getName();
+    document.getElementById("p1HP").setAttribute("value", P1.getHP());
+    document.getElementById("p1MP").setAttribute("value", P1.getMP());
+    document.getElementById("p1PA").setAttribute("value", P1.getPA());
+    document.getElementById("p1MA").setAttribute("value", P1.getMA());
+    document.getElementById("p1PD").setAttribute("value", P1.getPD());
+    document.getElementById("p1MD").setAttribute("value", P1.getMD());
+    document.getElementById("p1Fortune").setAttribute("value", P1.getFortune());
+    document.getElementById("p1Ability1").innerHTML = P1.getAbility1();
+    document.getElementById("p1Ability2").innerHTML = P1.getAbility2();
+    document.getElementById("p1Ability3").innerHTML = P1.getAbility3();
+    document.getElementById("p1Ability4").innerHTML = P1.getAbility4();
+
+
+   
+    // Load Player 2 character data
+    document.getElementById("char2").style.backgroundImage = "url(" + P2.getAvatar() + ")";
+    document.getElementById("p2Icon").setAttribute("src", P2.getIcon());
+    document.getElementById("p2Name").innerHTML = P2.getName();
+    document.getElementById("p2HP").setAttribute("value", P2.getHP());
+    document.getElementById("p2MP").setAttribute("value", P2.getMP());
+    document.getElementById("p2PA").setAttribute("value", P2.getPA());
+    document.getElementById("p2MA").setAttribute("value", P2.getMA());
+    document.getElementById("p2PD").setAttribute("value", P2.getPD());
+    document.getElementById("p2MD").setAttribute("value", P2.getMD());
+    document.getElementById("p2Fortune").setAttribute("value", P2.getFortune());
+    document.getElementById("p2Ability1").innerHTML = P2.getAbility1();
+    document.getElementById("p2Ability2").innerHTML = P2.getAbility2();
+    document.getElementById("p2Ability3").innerHTML = P2.getAbility3();
+    document.getElementById("p2Ability4").innerHTML = P2.getAbility4();   
+    
+}
+
+function gameLoop() 
+{
+    //add 1 to the round variable to keep track of which round it is
+    round = round + 1;
+
+    p1AbPoints = 0;
+    p2AbPoints = 0;
+
+    let p1DiceRollResult = 0;
+    let p2DiceRollResult = 0;
+
+    p1DiceRollResult = rollDice() + P1.getfortuneModifier();
+    p2DiceRollResult = rollDice() + P2.getfortuneModifier();
+
+    if (round === 1)
+    {
+        message = "Let the battle begin! Fate shall decide who goes first each turn. <br /><br /> ";
+    }
+    else
+    {
+        message = "Round " + round + "<br /><br /> ";
+    }
+      
+    if (p1DiceRollResult > p2DiceRollResult) 
+    {
+        goFirst = 1;
+        playerCharacter = P1.getName();
+        message += "Player 1 rolls " + p1DiceRollResult + ", Player 2 rolls " + p2DiceRollResult + ", Player " + goFirst + " the " + 
+                playerCharacter + " goes first. ";
+    } 
+    else if (p2DiceRollResult === p1DiceRollResult)
+    {
+        goFirst = Math.floor(Math.random() * 2) + 1;
+
+        if (goFirst === 1) 
+        {
+            playerCharacter = P1.getName();
+            message += "Player 1 rolls " + p1DiceRollResult + ", Player 2 rolls " + p2DiceRollResult + " It's a tie! The fates choose Player " + goFirst + " the " + 
+                playerCharacter + " to go first. ";
+        }
+        else
+        {
+            playerCharacter = P2.getName();
+            message += "Player 1 rolls " + p1DiceRollResult + ", Player 2 rolls " + p2DiceRollResult + " It's a tie! The fates choose Player " + goFirst + " the " + 
+                playerCharacter + " to go first. ";
+                       
+        }
+    }
+    else 
+    {
+        goFirst = 2;
+        playerCharacter = P2.getName();
+        message += "Player 1 rolls " + p1DiceRollResult + ", Player 2 rolls " + p2DiceRollResult + ", Player " + goFirst + " the " + 
+                playerCharacter + " goes first. ";
+    }
+
+    
+    
+    
+    document.getElementById("messageBox").innerHTML = message;
+
+    if (goFirst === 1) 
+    {
+        document.getElementById("p2Ability1").disabled = true;
+        document.getElementById("p2Ability2").disabled = true;
+        document.getElementById("p2Ability3").disabled = true;
+        document.getElementById("p2Ability4").disabled = true;
+
+        
+
+        if (round === 1) 
+        {
+            p1AbPoints = 1;
+            p2AbPoints = 1;
+            p1AbPointsMessage = " The Fates offer both players 1 ability point in round 1. <br /><br /> Your Turn";
+            p2AbPointsMessage = " The Fates offer both players 1 ability point in round 1. <br /><br /> Wait";
+            document.getElementById("p1AbPointsMessage").innerHTML = p1AbPointsMessage;
+            document.getElementById("p2AbPointsMessage").innerHTML = p2AbPointsMessage;
+            document.getElementById("p2AbPointNumber").innerHTML = "AP Points: 💥" + p2AbPoints + "💥";
+            document.getElementById("p1AbPointNumber").innerHTML = "AP Points: 💥" + p1AbPoints + "💥";
+            
+        }
+    }
+    else
+    {
+        document.getElementById("p1Ability1").disabled = true;
+        document.getElementById("p1Ability2").disabled = true;
+        document.getElementById("p1Ability3").disabled = true;
+        document.getElementById("p1Ability4").disabled = true;
+    }
+}
+
+function rollDice()
+{
+    diceRoll = Math.floor(Math.random() * 6) + 1;
+    return diceRoll;
+}
+

@@ -47,7 +47,7 @@ body
 .box
 {	
 	
-	/*border: 5px solid rgb(218, 8, 124);*/
+	/* border: 5px solid rgb(218, 8, 124); */
 	
 	
 }
@@ -57,7 +57,7 @@ body
 
 #char1
 {
-	background-image: url("ogreFinal.png");
+	/*background-image: url("ogreFinal.png");*/
 	background-size: contain;
 	background-repeat: no-repeat;
 	color: Purple;
@@ -66,7 +66,7 @@ body
 
 #char2
 {
-	background-image: url("birdFinal.png");
+	/*background-image: url("birdFinal.png");*/
 	background-size: contain;
 	background-repeat: no-repeat;
 	
@@ -83,49 +83,29 @@ body
     
 }
 
-.ability {
-    /* Style for each ability button */
-    border: 1px solid white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    background: black; /* Matches your RPG box theme */
-    color: white;
-    font-family: 'Press Start 2P';
-    font-size: 16px;
+
+
+#p1StatsWindowContainer 
+{
+    background-image: url("stats_bg.png"); /* Replace with your file path */
+    background-size: cover; /* Ensures the full scene fills the panel */
+    background-repeat: no-repeat;
+    background-position: center; /* Centers the key details */
+	vertical-align: middle;
+	display: grid;
+	align-content: center;
+
 	
 }
 
-.ability:hover {
-    background: #00008b;
-}
-
-#box-1 {
+#p2StatsWindowContainer 
+{
     background-image: url("stats_bg.png"); /* Replace with your file path */
     background-size: cover; /* Ensures the full scene fills the panel */
     background-repeat: no-repeat;
     background-position: center; /* Centers the key details */
-
-	/*
-    
-    
-    border: 8px solid white;
-    border-style: ridge;
-    box-shadow: 5px 5px 0px rgba(0,0,0,0.5); 
-    
-    padding: 20px;
-    color: #f0f0f0; 
-    font-family: 'Press Start 2P', monospace; 
-
-	*/
-}
-
-#box-6 {
-    background-image: url("stats_bg.png"); /* Replace with your file path */
-    background-size: cover; /* Ensures the full scene fills the panel */
-    background-repeat: no-repeat;
-    background-position: center; /* Centers the key details */
+	display: grid;
+	align-content: center;
 
 	/*
     
@@ -142,17 +122,10 @@ body
 }
 
 
-#box-19 {
-    background-image: url("stats_bg.png"); 
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center;   
-    
-	
-}
 
 
-#box-21 {
+
+#messageBox {
     background: black; 
     border: 8px solid white;
     border-style: ridge;
@@ -160,10 +133,10 @@ body
     box-shadow: 5px 5px 0px rgba(0,0,0,0.5); 
 
     
-    padding: 20px;
+    padding: 10px;
     color: #f0f0f0; 
     font-family: '8bitFont';
-	font-size: 30px;
+	font-size: 25px;
 	
 
 	
@@ -179,3 +152,135 @@ body
 	
 }
 
+
+
+.stat-container 
+{
+    width: 200px;
+    font-family: '8bitFont';
+	color: white;
+	background: black; 
+    border: 8px solid white;
+    border-style: ridge;
+	border-radius: 10px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.5); 
+	margin-right: auto;
+	margin-left: auto;    
+    padding: 20px;
+    color: #f0f0f0;    
+	font-size: 22px;
+	
+}
+
+div.stat-numbers {
+	margin-bottom: 30px;
+	font-size: 12px;
+}
+
+.stat-numbers {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8px; /* Small pixel font size */
+    color: white;
+    margin-top: 5px;
+}
+
+progress {
+    width: 100%;
+    height: 15px;
+    /* ... your custom retro styling ... */
+}
+
+.charIcon {
+	margin-right: 10px;
+}
+
+button
+{
+	width: 100%;    /* Makes it as wide as the div */
+    height: 100%;   /* Makes it as tall as the div */
+     border: 8px solid white;
+    border-style: ridge;
+	border-radius: 10px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.5); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: black; /* Matches your RPG box theme */
+	color: white;
+    font-family: '8bitFont';
+    font-size: 16px;
+}
+
+button:hover
+{
+	background: #00008b
+}
+
+button:disabled	
+{
+	background: #808080;
+	color: #ccc;
+	cursor: not-allowed;
+}
+
+#p1AbPointsWindow
+{
+	border: 8px solid white;
+    border-style: ridge;
+	border-radius: 10px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.5); 
+    background: black; /* Matches your RPG box theme */
+	display: grid;
+	
+	
+}
+
+#p2AbPointsWindow
+{
+	
+    border: 8px solid white;
+    border-style: ridge;
+	border-radius: 10px;
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.5); 
+    background: black; /* Matches your RPG box theme */
+	display: grid;
+	
+}
+
+#p1AbPointsMessage
+{
+	color: white;
+    font-family: '8bitFont';
+    font-size: 20px;
+	padding: 10px;
+	border: 8px solid white;
+	
+}
+
+#p1AbPointNumber
+{
+	color: white;
+    font-family: '8bitFont';
+    font-size: 20px;
+	padding: 10px;
+}
+
+#p2AbPointsMessage
+{
+	color: white;
+    font-family: '8bitFont';
+    font-size: 20px;
+	padding: 10px;
+	border: 8px solid white;
+	
+}
+
+#p2AbPointNumber
+{
+	color: white;
+    font-family: '8bitFont';
+    font-size: 20px;
+	padding: 10px;
+}
