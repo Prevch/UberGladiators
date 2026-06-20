@@ -1,346 +1,356 @@
+physical attack hit formula: 
+
+Roll die
+
+if die + p1 fortune modifier - p2 fortune modifier >= 5 hit is successul else miss
+
+physical attack damage formula is:
+
+(physical attack modifier + (die roll - 2)) - physical defense modifier
+
+
+
+💥
+
+ability modifiers
+stat 0-5 - modifier = 0
+stat 6-7 - modifier = +1
+stat 8-9 - modifier = +2
+stat 10 - modifier = +3
+
+P1 fort mod = 0
+P2 fort mod = 2
+
+P1 Roll = 2
+P2 Roll = 5
+
+P1 Result = 2
+P2 Result = 7
+
+
 class Character 
 {
-    constructor() 
+    constructor(name, hp, mp, pa, ma, pd, md, fortune, ability1, ability1Cost, ability1SoundEffect, ability1VisualEffect, ability1DamageFormula, ability2, ability2Cost, ability3, ability3Cost, ability4, ability4Cost, icon, avatar) 
     {
-        this.name = "";
-        this.hp = 0;
-        this.mp = 0;
-        this.pa = 0;
-        this.ma = 0;
-        this.pd = 0;
-        this.md = 0;
-        this.fortune = 0;
+        this.name = name;
+        this.hp = hp;
+        this.mp = mp;
+        this.pa = pa;
+        this.ma = ma;
+        this.pd = pd;
+        this.md = md;
+        this.fortune = fortune;
+        this.ability1 = ability1;
+        
+        this.ability1Cost = ability1Cost;
+        this.ability1SoundEffect = ability1SoundEffect;
+        this.ability1VisualEffect = ability1VisualEffect;
+        this.ability1DamageFormula = ability1DamageFormula;
+        
+        this.ability2 = ability2;
+        this.ability2Cost = ability2Cost;
+        this.ability3 = ability3;
+        this.ability3Cost = ability3Cost;
+        this.ability4 = ability4;
+        this.ability4Cost = ability4Cost;
+        this.icon = icon;
+        this.avatar = avatar;
+        let paModifier = 0;
+        let maModifier = 0;
+        let pdModifier = 0;
+        let mdModifier = 0;
+        let fortuneModifier = 0;
 
-        this.ability1 = "";
-        this.ability1Cost = 0;
-        this.ability1SoundEffect = "";
-        this.ability1VisualEffect = "";
-        this.ability1DamageFormula = "";
+        
+        //Set physical attack ability modifiers
+        if(this.pa > 5 && this.pa < 8)
+        {
+            this.paModifier = 1;
+        }
+        else if(this.pa > 7 && this.pa < 10)
+        {
+            paModifier = 2;
+        }
+        else if(this.pa < 6)
+        {
+            this.paModifier = 0;
+        }
+        else
+        {
+            this.paModifier = 3;
+        }
 
-        this.ability2 = "";
-        this.ability2Cost = 0;
-        this.ability2VisualEffect = "";
-        this.ability2DamageFormula = "";
+        //set magic attack ability modifiers
+        if(this.ma > 5 && this.ma < 8)
+        {
+            this.maModifier = 1;
+        }
+        else if(this.ma > 7 && this.ma < 10)
+        {
+            maModifier = 2;
+        }
+        else if(this.ma < 6)
+        {
+            this.maModifier = 0;
+        }
+        else
+        {
+            this.maModifier = 3;
+        }
 
-        this.ability3 = "";
-        this.ability3Cost = 0;
-        this.ability3VisualEffect = "";
-        this.ability3DamageFormula = "";
+        //set physical defense ability modifiers
+        if(this.pd > 5 && this.pd < 8)
+        {
+            this.pdModifier = 1;
+        }
+        else if(this.pd > 7 && this.pd < 10)
+        {
+            this.pdModifier = 2;
+        }
+        else if(this.pd < 6)
+        {
+            this.pdModifier = 0;
+        }
+        else
+        {
+            pdModifier = 3;
+        }
 
-        this.ability4 = "";
-        this.ability4Cost = 0;
-        this.ability4VisualEffect = "";
-        this.ability4DamageFormula = "";
-
-        this.icon = "";
-        this.avatar = "";
-        this.paModifier = 0;
-        this.maModifier = 0;
-        this.pdModifier = 0;
-        this.mdModifier = 0;
-        this.fortuneModifier = 0;
+        //set magic defense ability modifiers
+        if(this.md > 5 && this.md < 8)
+        {
+            this.mdModifier = 1;
+        }
+        else if(this.md > 7 && this.md < 10)
+        {
+            this.mdModifier = 2;
+        }
+        else if(this.md < 6)
+        {
+            mdModifier = 0;
+        }
+        else
+        {
+            this.mdModifier = 3;
+        }
+        
+        
+        //set fortune ability modifiers
+        if(this.fortune > 5 && this.fortune < 8)
+        {
+            this.fortuneModifier = 1;
+        }
+        else if(this.fortune > 7 && this.fortune < 10)
+        {
+            this.fortuneModifier = 2;
+        }
+        else if(this.fortune < 6)
+        {
+            this.fortuneModifier = 0;
+        }
+        else
+        {
+            this.fortuneModifier = 3;
+        }
+      
+        
     }
-        
-        setModifiers()
-        {
-            //Set physical attack ability modifiers
-            if(this.pa > 5 && this.pa < 8)
-            {
-                this.paModifier = 1;
-            }
-            else if(this.pa > 7 && this.pa < 10)
-            {
-                this.paModifier = 2;
-            }
-            else if(this.pa < 6)
-            {
-                this.paModifier = 0;
-            }
-            else
-            {
-                this.paModifier = 3;
-            }
 
-            //Set magic attack ability modifiers
-            if(this.ma > 5 && this.ma < 8)
-            {
-                this.maModifier = 1;
-            }
-            else if(this.ma > 7 && this.ma < 10)
-            {
-                this.maModifier = 2;
-            }
-            else if(this.ma < 6)
-            {
-                this.maModifier = 0;
-            }
-            else
-            {
-                this.maModifier = 3;
-            }
+    setName(name) 
+    {
+        this.name = name;
+    }
 
-            //Set physical defense ability modifiers
-            if(this.pd > 5 && this.pd < 8)
-            {
-                this.pdModifier = 1;
-            }
-            else if(this.pd > 7 && this.pd < 10)
-            {
-                this.pdModifier = 2;
-            }
-            else if(this.pd < 6)
-            {
-                this.pdModifier = 0;
-            }
-            else
-            {
-                this.pdModifier = 3;
-            }
+    setHP(hp) 
+    {
+        this.hp = hp;
+    }
 
-            //Set magic defense ability modifiers
-            if(this.md > 5 && this.md < 8)
-            {
-                this.mdModifier = 1;
-            }
-            else if(this.md > 7 && this.md < 10)
-            {
-                this.mdModifier = 2;
-            }
-            else if(this.md < 6)
-            {
-                this.mdModifier = 0;
-            }
-            else
-            {
-                this.mdModifier = 3;
-            }
+    setMP(mp) 
+    {
+        this.mp = mp;
+    }
 
-            //Set fortune ability modifiers
-            if(this.fortune > 5 && this.fortune < 8)
-            {
-                this.fortuneModifier = 1;
-            }
-            else if(this.fortune > 7 && this.fortune < 10)
-            {
-                this.fortuneModifier = 2;
-            }
-            else if(this.fortune < 6)
-            {
-                this.fortuneModifier = 0;
-            }
-            else
-            {
-                this.fortuneModifier = 3;
-            }      
-        
-        }
+    setPA(pa) 
+    {
+        this.pa = pa;
+    }
 
-        setHP(hp) 
-        {
-            this.hp = hp;
-        }
+    setMA(ma) 
+    {
+        this.ma = ma;
+    }
 
-        setMP(mp) 
-        {
-            this.mp = mp;
-        }
+    setPD(pd) 
+    {
+        this.pd = pd;
+    }
 
-        setPA(pa) 
-        {
-            this.pa = pa;
-            this.setModifiers();
-        }
+    setMD(md) 
+    {
+        this.md = md;
+    }
 
-        setMA(ma) 
-        {
-            this.ma = ma;
-            this.setModifiers();
-        }
+    setFortune(fortune) 
+    {
+        this.fortune = fortune;
+    }   
 
-        setPD(pd) 
-        {
-            this.pd = pd;
-            this.setModifiers();
-        }
+    setAbility1(ability1) 
+    {
+        this.ability1 = ability1;
+    }
 
-        setMD(md) 
-        {
-            this.md = md;
-            this.setModifiers();
-        }
+    setAbility2(ability2) 
+    {
+        this.ability2 = ability2;
+    }
 
-        setFortune(fortune) 
-        {
-            this.fortune = fortune;
-            this.setModifiers();
-        }   
+    setAbility3(ability3) 
+    {
+        this.ability3 = ability3;
+    }
 
-         getName()
-        {
-            return this.name;
-        }
+    setAbility4(ability4) 
+    {
+        this.ability4 = ability4;
+    }
 
-        getHP()
-        {
-            return this.hp;
-        }
+    setIcon(icon) 
+    {
+        this.icon = icon;
+    }
 
-        getMP()
-        {
-            return this.mp;
-        }
+    setAvatar(avatar) 
+    {
+        this.avatar = avatar;
+    }
 
-        getPA()
-        {
-            return this.pa;
-        }
+    getName()
+    {
+        return this.name;
+    }
 
-        getMA()
-        {
-            return this.ma;
-        }
+    getHP()
+    {
+        return this.hp;
+    }
 
-        getPD()
-        {
-            return this.pd;
-        }
+    getMP()
+    {
+        return this.mp;
+    }
 
-        getMD()
-        {
-            return this.md;
-        }
+    getPA()
+    {
+        return this.pa;
+    }
 
-        getFortune()
-        {
-            return this.fortune;
-        }
+    getMA()
+    {
+        return this.ma;
+    }
 
-        getAbility1()
-        {
-            return this.ability1;
-        }
+    getPD()
+    {
+        return this.pd;
+    }
 
-        getAbility1Cost()
-        {
-            return this.ability1Cost;
-        }
+    getMD()
+    {
+        return this.md;
+    }
 
-        getAbility2()
-        {
-            return this.ability2;
-        }
+    getFortune()
+    {
+        return this.fortune;
+    }
 
-        getAbility2Cost()
-        {
-            return this.ability2Cost;
-        }
+    getAbility1()
+    {
+        return this.ability1;
+    }
 
-        getAbility3()
-        {
-            return this.ability3;
-        }
+    getAbility1Cost()
+    {
+        return this.ability1Cost;
+    }
 
-        getAbility3Cost()
-        {
-            return this.ability3Cost;
-        }
+    getAbility2()
+    {
+        return this.ability2;
+    }
 
-        getAbility4()
-        {
-            return this.ability4;
-        }
+    getAbility2Cost()
+    {
+        return this.ability2Cost;
+    }
 
-        getAbility4Cost()
-        {
-            return this.ability4Cost;
-        }
+    getAbility3()
+    {
+        return this.ability3;
+    }
 
-        getIcon()
-        {
-            return this.icon;
-        }
+    getAbility3Cost()
+    {
+        return this.ability3Cost;
+    }
 
-        getAvatar()
-        {
-            return this.avatar;
-        }
-        
-        getpaModifier()
-        {
-            return this.paModifier;
-        }
+    getAbility4()
+    {
+        return this.ability4;
+    }
 
-        getmaModifier()
-        {
-            return this.maModifier;
-        }
+    getAbility4Cost()
+    {
+        return this.ability4Cost;
+    }
 
-        getpdModifier()
-        {
-            return this.pdModifier;
-        }
+    getIcon()
+    {
+        return this.icon;
+    }
 
-        getmdModifier()
-        {
-            return this.mdModifier;
-        }
-        
-        getfortuneModifier()
-        {
-            return this.fortuneModifier;
-        }  
-
+    getAvatar()
+    {
+        return this.avatar;
+    }
     
+    getpaModifier()
+    {
+        return this.paModifier;
+    }
 
-}
+    getmaModifier()
+    {
+        return this.maModifier;
+    }
 
-class Ogre extends Character
-{
-    constructor() {
-    // 1. super() calls the base Character constructor
-    super(); 
+    getpdModifier()
+    {
+        return this.pdModifier;
+    }
+
+    getmdModifier()
+    {
+        return this.mdModifier;
+    }
     
-    // 2. Assign Ogre-specific stats
-    this.name = "Ogre";
-    this.hp = 10;
-    this.mp = 5;
-    this.pa = 8;
-    this.ma = 3;
-    this.pd = 6;
-    this.md = 3;
-    this.fortune = 5;
-    
-    // 3. Assign Ogre-specific unique abilities
-    this.ability1 = "Club Smash";
-    this.ability1Cost = 2;
-    this.ability1DamageFormula = "paModifier * 3 + pa";
-    this.ability1SoundEffect = "smash.mp3";
-    this.ability1VisualEffect = "earthquake_particles";
-
-    // 4. Calculate the modifiers immediately based on these custom starting stats
-    this.setModifiers();
-  }
-
-  // 5. You can add unique Ogre-only behaviors here
-  roar() {
-    console.log(`${this.name} lets out a terrifying battle roar!`);
-    this.pa += 2; // Temporary buff
-    this.setModifiers(); // Recalculate
-  }
-}
+    getfortuneModifier()
+    {
+        return this.fortuneModifier;
+    }
+};
 
 
 
+const Ogre = new Character("Ogre", 10, 5, 8, 3, 6, 3, 5, "Haymaker-", 1, "sound/ogrePunch.mp3", "red", 2, "Fire Axe-", 2, "Roar-", 2, "Defend-", 1, "ogreHead.png", "ogreFinal.png");
 
 
+const Bird = new Character("Bird", 7, 7, 4, 6, 3, 5, 8, "Beak Bite-", 1, 2, 2, 2, "Drain-", 2, "Fate-", 2, "Defend-", 1, "birdHead.png", "birdFinal.png");
 
-//Ogre = new Character("Ogre");
-
-
-//Bird = new Character("Bird");
-
-//P1 = Ogre;
-//P2 = Bird;
+P1 = Ogre;
+P2 = Bird;
 
 
 

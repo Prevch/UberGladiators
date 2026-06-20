@@ -47,7 +47,7 @@ body
 .box
 {	
 	
-	/* border: 5px solid rgb(218, 8, 124); */
+	 border: 5px solid rgb(218, 8, 124); 
 	
 	
 }
@@ -283,4 +283,16 @@ button:disabled
     font-family: '8bitFont';
     font-size: 20px;
 	padding: 10px;
+}
+
+@keyframes box-strobe 
+{
+    0%, 25%, 50%, 75% { background-color: white; }
+    12.5%, 37.5%, 62.5%, 87.5%, 100% { background-color: red; }
+}
+
+.flash-trigger-strobe 
+{
+    /* 0.4s duration = 0.1s per flash. step-end makes it "hard" */
+    animation: box-strobe 0.4s step-end;
 }
